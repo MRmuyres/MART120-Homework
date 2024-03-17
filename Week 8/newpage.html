@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <Title>
+            Seven.
+        </Title>
+        <script>
+           
+            function getData(){
+                var name = document.getElementById("txtName").value;
+                var phone = document.getElementById("txtPhone").value;
+               document.getElementById(finalResult).innerHTML = "Welcome, " + name + ".  We will invite the creature to visit you at " + phone;
+            }
+        </script>
+    </head>
+    <body onload="myFunction">
+        <span id="myTag"> Filler Text. </span>
+        <script>
+            document.getElementById("myTag").innerHTML = "different filler text" ;
+            document.write = "Something something " + Variable; 
+        </script>
+        <table>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" id="txtName"></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><input type="text" id="txtPhone"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button id="buttonsubmit" onclick="getData();">Submit</button>
+                </td>
+            </tr>
+        </table>
+        <div id="finalResult"></div>
+    </body>
+    
+</html>

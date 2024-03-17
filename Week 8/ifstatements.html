@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>
+            Seven.
+        </title>
+        <script>
+        
+            function printQuestion(){
+                document.getElementById("Question").innerHTML = "Contact:";
+            }
+            function checkAnswer(){
+                var answer = document.getElementById("txtAnswer").value;
+                document.getElementById("Result").innerHTML = "We appreciate your response.";
+                if ("txtAnswer" == 10){
+                    document.getElementById("finalResult").innerHTML = <a href = "newpage.html">Thank you.</a>
+                }
+                else 
+                    document.getElementById("finalResult").innerHTML = "If only the creature felt the same."
+            };
+        </script>
+    </head>
+    <body onload="printQuestion();">
+        <h1>Contact the Creature</h1>
+        <div id="Question"></div>
+        <table>
+            <tr>
+                <td> On a scale from 1 - 10, how badly do you want to meet the creature? </td>
+                <td><input type="text" id="txtAnswer"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button id="btnSubmit" onclick="checkAnswer();">Submit</button></td>
+            </tr>
+        </table>
+        <div id="finalResult"></div>
+
+    </body>
+</html>
