@@ -10,18 +10,31 @@
         </style>
         <script>
            function checkText() {
-    var textBox = document.getElementById("txtName" + "txtPhone");
-    var text = textBox.value.trim(); 
+            var nameTextBox = document.getElementById("txtName");
+            var phoneTextBox = document.getElementById("txtPhone");
 
-    if (text !== "") {
-        var name = document.getElementById("txtName").value;
-                var phone = document.getElementById("txtPhone").value;
-               document.getElementById(finalResult).innerHTML = "Welcome, " + name + ".  We will invite the creature to visit you at " + phone;
+            var name = nameTextBox.value.trim();
+            var phone = phoneTextBox.value.trim();
+
+            if (name !== "" && phone !== "") {
+                // Clear red borders if they were applied previously
+                nameTextBox.classList.remove("red-border");
+                phoneTextBox.classList.remove("red-border");
+
+                document.getElementById("finalResult").innerHTML = "Welcome, " + name + ". We will invite the creature to visit you at " + phone;
+            } else {
+                if (name === "") {
+                    nameTextBox.classList.add("red-border");
+                } else {
+                    nameTextBox.classList.remove("red-border");
+                }
+                if (phone === "") {
+                    phoneTextBox.classList.add("red-border");
+                } else {
+                    phoneTextBox.classList.remove("red-border");
+                }
             }
-    else {
-        textBox.classList.add("red-border");
-    }
-}
+        }
         </script>
     </head>
     <body>
