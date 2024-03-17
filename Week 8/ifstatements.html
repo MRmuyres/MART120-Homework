@@ -7,12 +7,12 @@
         
             function printQuestion(){
                 document.getElementById("Question").innerHTML = "Contact:";
-            }
+            };
             function checkAnswer(){
-                var answer = parseInt.getElementById("finalAnswer").value;
+                var answer = parseInt.getElementById("textAnswer").value;
                 document.getElementById("txtAnswer").innerHTML = "We appreciate your response.";
-                if ("txtAnswer" == 10){
-                    document.getElementById("finalResult").innerHTML = <a href = "newpage.html">Thank you.</a>
+                if (answer == 10){
+                    document.getElementById("finalResult").innerHTML = '<a href = "newpage.html">Thank you.</a>'
                 }
                 else 
                     document.getElementById("finalResult").innerHTML = "If only the creature felt the same."
@@ -31,6 +31,7 @@
                 <td colspan="2"><button id="btnSubmit" onclick="checkAnswer();">Submit</button></td>
             </tr>
         </table>
+        I agree to the <a href="terms.html"> Terms and Conditions.</a>
         <div id="finalResult"></div>
 
     </body>
