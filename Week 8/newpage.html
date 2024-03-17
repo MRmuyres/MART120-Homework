@@ -1,22 +1,32 @@
 <html>
     <head>
         <Title>
-            Seven.
+            Eight.
         </Title>
+        <style>
+            .red-border {
+                border: 2px solid red;
+            }
+        </style>
         <script>
-           
-            function getData(){
-                var name = document.getElementById("txtName").value;
+           function checkText() {
+    var textBox = document.getElementById("txtName" + "txtPhone");
+    var text = textBox.value.trim(); 
+
+    if (text !== "") {
+        var name = document.getElementById("txtName").value;
                 var phone = document.getElementById("txtPhone").value;
                document.getElementById(finalResult).innerHTML = "Welcome, " + name + ".  We will invite the creature to visit you at " + phone;
             }
+    else {
+        textBox.classList.add("red-border");
+    }
+}
         </script>
     </head>
-    <body onload="myFunction">
-        <span id="myTag"> Filler Text. </span>
-        <script>
-            document.getElementById("myTag").innerHTML = "different filler text" ;
-            document.write = "Something something " + Variable; 
+    <body>
+        <h1>Congratulations, you are qualified to get a creature.</h1>
+        <h4>Please fill the following form to receive one.</h4>
         </script>
         <table>
             <tr>
@@ -28,11 +38,14 @@
                 <td><input type="text" id="txtPhone"></td>
             </tr>
             <tr>
-                <td colspan="2"><button id="buttonsubmit" onclick="getData();">Submit</button>
+                <td colspan="2"><button id="buttonsubmit" onclick="checkText();">Submit</button>
                 </td>
             </tr>
         </table>
         <div id="finalResult"></div>
+        <script>
+
+        </script>
     </body>
     
 </html>
