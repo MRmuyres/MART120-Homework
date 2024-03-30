@@ -2,6 +2,7 @@
     background-color: black;
     -webkit-text-stroke-color: white;
     -webkit-text-fill-color: white;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 #link{
@@ -9,7 +10,7 @@
 
 }
 
-style{
+body{
     background-image: url(paper.jpg)
     
 }
