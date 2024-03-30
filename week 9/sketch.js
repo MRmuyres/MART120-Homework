@@ -54,6 +54,9 @@ function setup() {
     line(170,195,200,195);
     strokeWeight(10);
     point(330,250);
-    
+     //title and signature
+  fill(0,0,0);
+  text('portrait', 10, 20);
+  text('Megan Muyres', 300,370);
     
   }
