@@ -1,0 +1,7 @@
+Here is my idea for my final project for Creative Coding I: 
+
+I would like to create a short visual novel in the style of an interactive website with a minigame. My idea is that a short introduction would take place on the first page of the website, the minigame on the second, and then the player would get access to one of two final pages depending on which ending they achieve. 
+The underlying story of the visual novel would be a thriller inspired by the Milgram Test, in which the characters are tested on their obedience by pressing a button that will shock a person they can't see.
+
+As for the minigame, I plan for it to be very simple. The player will get to decide whether or not to click the button but depending on which of the three characters they're playing there will be a chance that the button will be pressed against their will based on the character's "temperament." If the button isn't pressed by the time a 30-second timer runs out, they'll hear ambient noise of electricity and shouting. Then, the next character will go through the same process. 
+The endings are determined by whether the button was pressed or skipped more. A good ending plays if the button is skipped more than it was pressed and a bad ending plays if more characters press the button. I imagine the endings would show art reflecting the state of the person being shocked (in a very stylized approach so there isn't any deeply disturbing imagery) and perhaps some flavor text.

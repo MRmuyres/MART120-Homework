@@ -1,9 +1,14 @@
 var textCount; 
 //Character displayed determines scene
 var sceneCount = 0;
+var temperamentC;
+var temperamentH;
+var buttonPressed = false;
+var buttonCount = 0;
+const button = document.getElementById('redButton');
 
-//Textbox setup and intro
 function setup(){
+    //Textbox setup and intro
     buttonOne.textFont = "DotMatrix";
     buttonOne.textSize = 30;
     buttonOne.textColor = "white";
@@ -17,6 +22,10 @@ function setup(){
     buttonTwo.text = "Please listen attentively to the following instructions.";
     frameRate(15);
     textCount = 0;
+
+    //Temperament check
+    temperamentC = Math.floor(Math.random() * 5) + 1;
+    temperamentH = Math.floor(Math.random() * 10) + 1;
 }
 
 //basic textbox
@@ -27,6 +36,16 @@ function textbox(text, message){
       myButton.text = message;
 }
 }
+
+function temperamentCheck(variable){
+    if (variable >= 5){
+        buttonPressed = true;
+        buttonCount ++;
+    } else {
+        buttonPressed = false;
+    }
+}
+
 
 function draw(){
     fill(0);
@@ -51,4 +70,13 @@ function draw(){
         myButton.color = "#A388D5";
         myButton.draw();
     }
+    //Lots of speech will go here
+
+    //big red button
+    button.addEventListener('click', function(){
+        buttonPressed = true;
+        buttonCount ++;
+        //textCount = ???;
+    });
+
 }
