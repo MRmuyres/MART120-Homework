@@ -6,24 +6,25 @@ var temperamentC;
 var temperamentH;
 var buttonPressed;
 var buttonCount;
+var textBoxes = [];
 
 const button = document.getElementById('redButton');
 
 function setup(){
-     //Textbox setup and intro
-     createCanvas(1200, 1200);
+     //Variable values
      textCount = 0;
      sceneCount = 0;
      buttonPressed = false;
      buttonCount = 0;
 
+     // Create text boxes
+ textBoxes.push(new TextBox("Welcome to the EGOIST compliance study. Thank you for your invaluable participation.", 700, 200));
+
     //Temperament check
     temperamentC = Math.floor(Math.random() * 5) + 1;
     temperamentH = Math.floor(Math.random() * 10) + 1;
 }
- // Create text boxes
- textBoxes.push(new TextBox("Welcome to the EGOIST compliance study. Thank you for your invaluable participation.", 700, 200));
-
+ 
 //basic textbox
 function textbox(lineNumber, message){
       if(textCount == lineNumber){
