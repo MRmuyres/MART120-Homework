@@ -114,6 +114,16 @@ if (sceneCount == 0){
     }
 }
 
+//Scene 2
+if (sceneCount == 2){
+
+}
+
+//Scene 3
+if (sceneCount == 3){
+    
+}
+
 // Reset the text to change the scene
     setTimeout (textCountReset, 5000);
 

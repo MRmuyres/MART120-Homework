@@ -3,18 +3,19 @@
     <title>
         Desk.
     </title>
-    <style>
-        .content {
-          max-width: 1200px;
-          margin: auto;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="content">
-        <image src="Office Desk.png"></image>
-            <image src="Office Button.png" alt="Button Image" id="redButton"></image>
-        <script src="chat.js"></script>
+    <div class="container">
+        <div class="centered">
+            <div class="image-container">
+                    <image src="Office Desk.png" alt="Background Image" class="background-image"></image>
+                    <button id="redButton">
+                        <image src="Office Button.png" alt="Overlay Image" class="overlay-image"></image>
+                    </button>
+                    <script src="chat.js"></script>
+    </div>
+    </div>
     </div>
 </body>
 </html>
