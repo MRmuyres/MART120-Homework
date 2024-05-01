@@ -58,7 +58,7 @@ function textCountReset (){
 //Image button 
 const imageButton = document.getElementById('redButton');
 imageButton.addEventListener('click', function() {
-    alert(buttonPressed = true);
+    buttonPressed = true;
 });
 
 function draw(){
@@ -121,7 +121,7 @@ if (sceneCount == 2){
 
 //Scene 3
 if (sceneCount == 3){
-    
+
 }
 
 // Reset the text to change the scene
