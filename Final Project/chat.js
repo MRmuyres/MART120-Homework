@@ -130,7 +130,6 @@ if (sceneCount == 0){
         textbox (6, "Your time is up. You may exit now. Thank you for your participation.");
         sceneCount = 1;
     }
-}
 
 //Scene 2
 if (sceneCount == 2){
@@ -144,6 +143,11 @@ if (sceneCount == 3){
 
 // Reset the text to change the scene
     setTimeout (textCountReset, 5000);
-
-
 }
+
+window.onload = function() {
+    setup();
+
+    currentTextIndex = 1; 
+    draw();
+};
