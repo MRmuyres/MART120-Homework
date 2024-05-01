@@ -7,53 +7,34 @@ var temperamentH;
 var buttonPressed;
 var buttonCount;
 
-let buttonOne;
-let buttonTwo;
-let myButton;
-let scribble;
-
 const button = document.getElementById('redButton');
 
 function setup(){
-    //Textbox setup and intro
-    buttonOne = new Clickable();
-    buttonOne.textFont = "DotMatrix";
-    buttonOne.textSize = 30;
-    buttonOne.textColor = "white";
-    buttonOne.color = "#A388D563";
-
-    buttonTwo = new Clickable();
-    buttonTwo.color = "#A388D563";
-    buttonTwo.textFont = "DotMatrix";
-    buttonTwo.textSize = 30;
-    buttonTwo.textColor = "white";
-
-    myButton = new Clickable();
-    myButton.textFont = "DotMatrix";
-    myButton.textSize = 30;
-    myButton.textColor = "white";
-    myButton.color = "#A388D5";
-
-    scribble = new Scribble();
-    frameRate(15);
-    textCount = 0;
-    sceneCount = 0;
-    buttonPressed = false;
-    buttonCount = 0;
+     //Textbox setup and intro
+     createCanvas(1200, 1200);
+     textCount = 0;
+     sceneCount = 0;
+     buttonPressed = false;
+     buttonCount = 0;
 
     //Temperament check
     temperamentC = Math.floor(Math.random() * 5) + 1;
     temperamentH = Math.floor(Math.random() * 10) + 1;
 }
+ // Create text boxes
+ textBoxes.push(new TextBox("Welcome to the EGOIST compliance study. Thank you for your invaluable participation.", 700, 200));
 
 //basic textbox
 function textbox(lineNumber, message){
-    if(textCount == lineNumber){
-      myButton.draw();
-      scribble.scribbleRoundedRect(width/2,height/2+215,580,150,20);
-      myButton.text = message;
+      if(textCount == lineNumber){
+        for (let textBox of textBoxes) {
+            if (textBox.lineNumber === lineNumber) {
+                textBox.display(message);
+            }
+        }
+    }
 }
-}
+
 
 //check temperament
 function temperamentCheck(variable){
@@ -81,29 +62,18 @@ imageButton.addEventListener('click', function() {
 });
 
 function draw(){
-    //textbox appearance
-    fill(0);
-  textSize(24);
-  textAlign(CENTER);
-  myButton.draw();
-  myButton.locate(10,height/2+140);
-  myButton.resize(580,150);
-  myButton.strokeWeight = 0;
-  stroke(255);
+        //textbox appearance
+        fill(0);
+        textSize(24);
+        textAlign(CENTER);
+        for (let textBox of textBoxes) {
+            textBox.draw();
+        }
 
   myButton.onPress = function(){  
     //When myButton is pressed, the text will be cycled through
     textCount++;
   }
-    if(sceneCount >= 0){
-        imageMode(CENTER);
-        myButton.textFont = "DotMatrix";
-        myButton.textSize = 30;
-        myButton.textColor = "white";
-        myButton.color = "#A388D5";
-        myButton.draw();
-    }
-
     //Scene 1
 if (sceneCount == 0){
     textbox (1, "In the room next to you, there is a deathrow crimimal.");
@@ -143,6 +113,31 @@ if (sceneCount == 3){
 
 // Reset the text to change the scene
     setTimeout (textCountReset, 5000);
+
+
+    class TextBox {
+        constructor(message, x, y) {
+            this.message = message;
+            this.x = x;
+            this.y = y;
+            this.width = 700; 
+            this.height = 200; 
+            this.lineNumber = -1; // Default value
+        }
+    
+        display(message) {
+            this.message = message;
+        }
+    
+        draw() {
+            fill(255);
+            rectMode(CENTER);
+            rect(this.x, this.y, this.width, this.height);
+            fill(0);
+            textAlign(CENTER, CENTER);
+            text(this.message, this.x, this.y);
+        }
+}
 }
 
 window.onload = function() {
@@ -150,4 +145,4 @@ window.onload = function() {
 
     currentTextIndex = 1; 
     draw();
-};
+}
