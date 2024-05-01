@@ -1,27 +1,45 @@
 var textCount; 
 //Character displayed determines scene
 var sceneCount = 0;
+
 var temperamentC;
 var temperamentH;
-var buttonPressed = false;
-var buttonCount = 0;
+var buttonPressed;
+var buttonCount;
+
+let buttonOne;
+let buttonTwo;
+let myButton;
+let scribble;
+
 const button = document.getElementById('redButton');
 
 function setup(){
     //Textbox setup and intro
+    buttonOne = new Clickable();
     buttonOne.textFont = "DotMatrix";
     buttonOne.textSize = 30;
     buttonOne.textColor = "white";
-    buttonOne.color = "#A388D563"
-    buttonOne.text = "Welcome to the EGOIST compliance study. Thank you for your invaluable participation.";
+    buttonOne.color = "#A388D563";
+
     buttonTwo = new Clickable();
-    buttonTwo.color = "#A388D563"
+    buttonTwo.color = "#A388D563";
     buttonTwo.textFont = "DotMatrix";
     buttonTwo.textSize = 30;
     buttonTwo.textColor = "white";
-    buttonTwo.text = "Please listen attentively to the following instructions.";
+
+    myButton = new Clickable();
+    myButton.textFont = "DotMatrix";
+    myButton.textSize = 30;
+    myButton.textColor = "white";
+    myButton.color = "#A388D5";
+
+    scribble = new Scribble();
     frameRate(15);
     textCount = 0;
+    sceneCount = 0;
+    buttonPressed = false;
+    buttonCount = 0;
 
     //Temperament check
     temperamentC = Math.floor(Math.random() * 5) + 1;
@@ -37,6 +55,7 @@ function textbox(lineNumber, message){
 }
 }
 
+//check temperament
 function temperamentCheck(variable){
     if (variable >= 5){
         buttonPressed = true;
@@ -71,7 +90,6 @@ function draw(){
   myButton.resize(580,150);
   myButton.strokeWeight = 0;
   stroke(255);
-  var scribble = new Scribble();
 
   myButton.onPress = function(){  
     //When myButton is pressed, the text will be cycled through
@@ -103,11 +121,11 @@ if (sceneCount == 0){
     });
 
 
-    if (buttonPressed = true){
+    if (buttonPressed){
         textbox (5, "Assesment complete. You may exit now. Thank you for your participation.");
         sceneCount = 1;
     }
-    else if (buttonPressed = false){
+    else
         textCount = 6;
         textbox (6, "Your time is up. You may exit now. Thank you for your participation.");
         sceneCount = 1;
