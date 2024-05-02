@@ -144,6 +144,6 @@ if (sceneCount == 3){
 window.onload = function() {
     setup();
 
-    currentTextIndex = 1; 
+    textCount = 0; 
     draw();
 }
