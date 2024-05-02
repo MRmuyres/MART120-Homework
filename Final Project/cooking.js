@@ -20,10 +20,10 @@ function textbox(instance, message){
 //check temperament
 function temperamentCheck(variable){
     if (variable >= 5){
-        buttonPressed = true;
+        isButtonPressed = true;
         buttonCount ++;
     } else {
-        buttonPressed = false;
+        isButtonPressed = false;
     }
 }
 
@@ -40,7 +40,7 @@ function repeatEnding(){
     
     setTimeout(function() {
         // Check if the button has not been clicked
-        if (!buttonPressed) {
+        if (!isButtonPressed) {
             line =8;
             textbox (8, "Your time is up. You may exit now. Thank you for your participation.");
             sceneCount ++;
@@ -50,7 +50,7 @@ function repeatEnding(){
     // Add click event listener to the button
     document.getElementById('redButton').addEventListener('click', function() {
         // Set buttonPressed to true when the button is clicked
-        buttonPressed = true;
+        isButtonPressed = true;
         buttonCount ++;
         line = 7;
         textbox (7, "Assesment complete. You may exit now. Thank you for your participation.");
@@ -63,7 +63,7 @@ function setup(){
     //Variable values
     line = 1;
     sceneCount = 0;
-    buttonPressed = false;
+    isButtonPressed = false;
     buttonCount = 0;
 
      //Temperament check
