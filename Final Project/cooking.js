@@ -36,6 +36,7 @@ function textCountReset (){
 
 function repeatEnding(){
 
+    const imageButton = document.getElementById('redButton');
     button.addEventListener('click', function(){
         buttonPressed = true;
         buttonCount ++;
@@ -55,13 +56,6 @@ function repeatEnding(){
     })
 
 }
-
-//Image button 
-const imageButton = document.getElementById('redButton');
-imageButton.addEventListener('click', function() {
-    buttonPressed = true;
-});
-
 
 function setup(){
     //Variable values
