@@ -6,6 +6,8 @@ var temperamentH;
 var isButtonPressed;
 var buttonCount;
 var sceneCount;
+const timeLimit = 30000;
+const imageButton = document.getElementById('redButton');
 
 function textbox(instance, message){
     if (line = instance){
@@ -35,25 +37,25 @@ function textCountReset (){
 }
 
 function repeatEnding(){
+    
+    setTimeout(function() {
+        // Check if the button has not been clicked
+        if (!buttonPressed) {
+            line =8;
+            textbox (8, "Your time is up. You may exit now. Thank you for your participation.");
+            sceneCount ++;
+        }
+    }, timeLimit);
 
-    const imageButton = document.getElementById('redButton');
-    button.addEventListener('click', function(){
+    // Add click event listener to the button
+    document.getElementById('redButton').addEventListener('click', function() {
+        // Set buttonPressed to true when the button is clicked
         buttonPressed = true;
         buttonCount ++;
-        line = 5;
-
-        if (buttonPressed){
-            textbox (7, "Assesment complete. You may exit now. Thank you for your participation.");
-            sceneCount = 1;
-        }
-        else{
-            line = 8;
-            textbox (8, "Your time is up. You may exit now. Thank you for your participation.");
-            sceneCount = 1;
-        }
-          // Reset the text to change the scene
-    setTimeout (textCountReset, 5000);
-    })
+        line = 7;
+        textbox (7, "Assesment complete. You may exit now. Thank you for your participation.");
+        sceneCount ++;
+    });
 
 }
 
@@ -80,7 +82,6 @@ function draw(){
         textbox (6, "You may begin now. Thank you once again for your cooperation.");
     
     
-        setTimeout (textCountTimer, 30000);
 
         repeatEnding();
 
