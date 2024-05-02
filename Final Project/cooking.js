@@ -1,14 +1,15 @@
 
 //variables
 var line; 
-var temperament;
+var temperamentC;
+var temperamentH;
 var isButtonPressed;
 var buttonCount;
 var sceneCount;
 
 function textbox(instance, message){
     if (line = instance){
-        alert('message');
+        alert(message);
         line ++;
     }
 
@@ -38,14 +39,14 @@ function repeatEnding(){
     button.addEventListener('click', function(){
         buttonPressed = true;
         buttonCount ++;
-        textCount = 5;
+        line = 5;
 
         if (buttonPressed){
             textbox (7, "Assesment complete. You may exit now. Thank you for your participation.");
             sceneCount = 1;
         }
         else{
-            textCount = 8;
+            line = 8;
             textbox (8, "Your time is up. You may exit now. Thank you for your participation.");
             sceneCount = 1;
         }
@@ -61,16 +62,17 @@ imageButton.addEventListener('click', function() {
     buttonPressed = true;
 });
 
+
 function setup(){
     //Variable values
-    textCount = 0;
+    line = 1;
     sceneCount = 0;
     buttonPressed = false;
     buttonCount = 0;
 
      //Temperament check
-     temperamentC = Math.floor(Math.random() * 5) + 1;
-     temperamentH = Math.floor(Math.random() * 10) + 1;
+        temperamentC = Math.floor(Math.random() * 5) + 1;
+        temperamentH = Math.floor(Math.random() * 10) + 1;
 }
 
 function draw(){
