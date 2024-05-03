@@ -21,7 +21,6 @@ function textbox(instance, message){
 function temperamentCheck(variable){
     if (variable >= 5){
         isButtonPressed = true;
-        buttonCount ++;
     } else {
         isButtonPressed = false;
     }
@@ -45,17 +44,18 @@ function repeatEnding(){
             textbox (8, "Your time is up. You may exit now. Thank you for your participation.");
             sceneCount ++;
         }
-    }, timeLimit);
-
-    // Add click event listener to the button
+         // Add click event listener to the button
     document.getElementById('redButton').addEventListener('click', function() {
         // Set buttonPressed to true when the button is clicked
-        isButtonPressed = true;
-        buttonCount ++;
-        line = 7;
-        textbox (7, "Assesment complete. You may exit now. Thank you for your participation.");
-        sceneCount ++;
+        if (isButtonPressed){ 
+            buttonCount ++;
+            line = 7;
+            textbox (7, "Assesment complete. You may exit now. Thank you for your participation.");
+            sceneCount ++;
+        }
+       
     });
+    }, timeLimit);
 
 }
 
@@ -81,7 +81,7 @@ function draw(){
         textbox(5, "Please understand that this is essential for our research. The shocks may cause discomfort, but they are necessary to ensure the accuracy of our findings.");
         textbox (6, "You may begin now. Thank you once again for your cooperation.");
     
-    
+        
 
         repeatEnding();
 
