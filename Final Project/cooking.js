@@ -7,6 +7,7 @@ var isButtonPressed;
 var isSecondButtonPressed;
 var buttonCount;
 var sceneCount;
+var buttonTimer;
 var myTimer = 30000; 
 //onclick date.parce. > +30seconds 
 // store date
@@ -82,14 +83,15 @@ function repeatEnding(){
     setTimeout(function(){
         const button = document.getElementById('redButton');
         button.style.display = 'none';
-
+        buttonTimer = true;
         
     }, timeLimit);
 
     if(isButtonPressed && !isSecondButtonPressed){
         alert('Assesment complete. You may exit now. Thank you for your participation.');
         window.location.replace ("goodEnding.html");
-    } else {
+    } 
+    if (buttonTimer) {
         alert ('Your time is up. You may exit now. Thank you for your participation.')
         window.localStorage.replace ("badEnding.html");
     }
@@ -104,6 +106,7 @@ function setup(){
     isButtonPressed = false;
     isSecondButtonPressed = false;
     buttonCount = 0;
+    buttonTimer = false;
 
      //Temperament check
         temperamentC = Math.floor(Math.random() * 5) + 1;
