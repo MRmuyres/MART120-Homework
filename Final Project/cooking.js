@@ -75,22 +75,25 @@ function repeatEnding(){
         isButtonPressed = true;
     });
 
-    setTimeout(function(){
-        const button = document.getElementById('redButton');
-        button.style.display = 'none';
-    }, timeLimit);
-
     document.getElementById('goodButton').addEventListener('click', function(){
         isSecondButtonPressed = true;
     });
 
-    if(isButtonPressed || !isSecondButtonPressed){
+    setTimeout(function(){
+        const button = document.getElementById('redButton');
+        button.style.display = 'none';
+
+        
+    }, timeLimit);
+
+    if(isButtonPressed && !isSecondButtonPressed){
         alert('Assesment complete. You may exit now. Thank you for your participation.');
         window.location.replace ("goodEnding.html");
     } else {
         alert ('Your time is up. You may exit now. Thank you for your participation.')
         window.localStorage.replace ("badEnding.html");
     }
+
 }
 
 
@@ -109,6 +112,7 @@ function setup(){
 
 function draw(){
 
+    //desk scene 0
     if (sceneCount == 0){
         textbox(1, 'Welcome to EGOIST Labs and thank you for your cooperation.')
         textbox (2, "Today marks your first exam. Please relax and listen carefully to the following instructions.")
