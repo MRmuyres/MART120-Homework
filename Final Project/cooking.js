@@ -49,31 +49,6 @@ function textCountReset (){
     line = 0;
 }
 
-/* function repeatEnding(){
-    
-    setTimeout(function() {
-        // Check if the button has not been clicked
-        if (!isButtonPressed) {
-            line =8;
-            textbox (8, "Your time is up. You may exit now. Thank you for your participation.");
-            sceneCount ++;
-        }
-         // Add click event listener to the button
-    document.getElementById('redButton').addEventListener('click', function() {
-        // Set buttonPressed to true when the button is clicked
-        if (isButtonPressed){ 
-            buttonCount ++;
-            line = 7;
-            textbox (7, "Assesment complete. You may exit now. Thank you for your participation.");
-            sceneCount ++;
-        }
-       
-    });
-    }, timeLimit);
-
-}
-
-*/
 
 function repeatEnding(){
     document.getElementById('redButton').addEventListener('click', function(){
