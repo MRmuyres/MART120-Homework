@@ -50,7 +50,7 @@ function textCountReset (){
 }
 
 
-function repeatEnding(){
+/*function repeatEnding(){
     document.getElementById('redButton').addEventListener('click', function(){
         isButtonPressed = true;
     });
@@ -70,8 +70,29 @@ function repeatEnding(){
         }
     }, 1000);
 }
+*/
+function repeatEnding(){
+    document.getElementById('redButton').addEventListener('click', function(){
+        isButtonPressed = true;
+    });
 
+    setTimeout(function(){
+        buttonTimer = true;
+        
+    }, timeLimit);
 
+    var intervalId = setInterval(function(){
+        if(isButtonPressed){
+            alert('Assessment complete. You may exit now. Thank you for your participation.');
+            window.location.replace("goodEnding.html");
+            clearInterval(intervalId);
+        } else if (buttonTimer) {
+            alert('Your time is up. You may exit now. Thank you for your participation.');
+            window.location.replace("badEnding.html");
+            clearInterval(intervalId);
+        }
+    }, 1000);
+}
 
 function setup(){
     //Variable values
