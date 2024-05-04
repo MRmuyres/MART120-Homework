@@ -3,12 +3,16 @@
 var line; 
 var temperamentC;
 var temperamentH;
-var isButtonPressed;
+var isButtonPressed = false;
 var isSecondButtonPressed;
 var buttonCount;
 var sceneCount;
-var buttonTimer;
+var buttonTimer = false;
 var myTimer = 30000; 
+// Const variables for the button:
+
+
+
 //onclick date.parce. > +30seconds 
 // store date
 //click button - check date > 30 seconds
@@ -81,15 +85,17 @@ function repeatEnding(){
         
     }, timeLimit);
 
-    if(isButtonPressed){
-        alert('Assesment complete. You may exit now. Thank you for your participation.');
-        window.location.replace ("goodEnding.html");
-    } else if (buttonTimer) {
-        alert ('Your time is up. You may exit now. Thank you for your participation.')
-        window.localStorage.replace ("badEnding.html");
-    }
-
+    setInterval(function(){
+        if(isButtonPressed){
+            alert('Assessment complete. You may exit now. Thank you for your participation.');
+            window.location.replace("goodEnding.html");
+        } else if (buttonTimer) {
+            alert('Your time is up. You may exit now. Thank you for your participation.');
+            window.location.replace("badEnding.html");
+        }
+    }, 1000);
 }
+
 
 
 function setup(){
