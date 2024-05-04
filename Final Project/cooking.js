@@ -76,22 +76,15 @@ function repeatEnding(){
         isButtonPressed = true;
     });
 
-    document.getElementById('goodButton').addEventListener('click', function(){
-        isSecondButtonPressed = true;
-    });
-
     setTimeout(function(){
-        const button = document.getElementById('redButton');
-        button.style.display = 'none';
         buttonTimer = true;
         
     }, timeLimit);
 
-    if(isButtonPressed && !isSecondButtonPressed){
+    if(isButtonPressed){
         alert('Assesment complete. You may exit now. Thank you for your participation.');
         window.location.replace ("goodEnding.html");
-    } 
-    if (buttonTimer) {
+    } else if (buttonTimer) {
         alert ('Your time is up. You may exit now. Thank you for your participation.')
         window.localStorage.replace ("badEnding.html");
     }
