@@ -4,8 +4,17 @@ var line;
 var temperamentC;
 var temperamentH;
 var isButtonPressed;
+var isSecondButtonPressed;
 var buttonCount;
 var sceneCount;
+var myTimer = 30000; 
+//onclick date.parce. > +30seconds 
+// store date
+//click button - check date > 30 seconds
+// on click: another variable says "clicked"
+// delayed pop-up based on click variable
+//timeout - was button clicked?
+// alert 
 const timeLimit = 30000;
 const imageButton = document.getElementById('redButton');
 
@@ -35,7 +44,7 @@ function textCountReset (){
     line = 0;
 }
 
-function repeatEnding(){
+/* function repeatEnding(){
     
     setTimeout(function() {
         // Check if the button has not been clicked
@@ -59,11 +68,38 @@ function repeatEnding(){
 
 }
 
+*/
+
+function repeatEnding(){
+    document.getElementById('redButton').addEventListener('click', function(){
+        isButtonPressed = true;
+    });
+
+    setTimeout(function(){
+        const button = document.getElementById('redButton');
+        button.style.display = 'none';
+    }, timeLimit);
+
+    document.getElementById('goodButton').addEventListener('click', function(){
+        isSecondButtonPressed = true;
+    });
+
+    if(isButtonPressed || !isSecondButtonPressed){
+        alert('Assesment complete. You may exit now. Thank you for your participation.');
+        window.location.replace ("goodEnding.html");
+    } else {
+        alert ('Your time is up. You may exit now. Thank you for your participation.')
+        window.localStorage.replace ("badEnding.html");
+    }
+}
+
+
 function setup(){
     //Variable values
     line = 1;
     sceneCount = 0;
     isButtonPressed = false;
+    isSecondButtonPressed = false;
     buttonCount = 0;
 
      //Temperament check
